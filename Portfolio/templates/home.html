@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('{{ url_for('static', filename='back.jpg') }}') no-repeat center center/cover; /* Set your background image here */
+            background-color: #f0f0f0; /* Fallback background color in case image doesn't load */
+            color: #444;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+        .logo{
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color:  #f39c12;
+        }
+
+        .content {
+            padding: 60px 20px;
+            text-align: center;
+            
+            border-radius: 15px;
+            max-width: 1200px;
+            margin: 30px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 1em;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .portfolio-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .portfolio-item {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            position: relative;
+            padding: 15px;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #000000;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1em;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .portfolio-item p {
+            font-size: 0.85em;
+            margin: 0;
+        }
+
+        .portfolio-item a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .portfolio-item a:hover {
+            color: #000000;
+        }
+
+        /* Different background colors for each item */
+        .portfolio-item.jared { background-color: rgb(236, 29, 170); } /* Blue */
+        .portfolio-item.another { background-color: rgb(42, 42, 243); } /* Green */
+        .portfolio-item.member3 { background-color: rgb(255, 166, 0); } /* Red */
+        .portfolio-item.member4 { background-color: #8e44ad; } /* Purple */
+        .portfolio-item.member5 { background-color: rgb(229, 214, 0); } /* Orange */
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .portfolio-item {
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">OUR INSIDE OUT PORTFOLIO</div>
+    <nav>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<div class="content">
+    <h1>Welcome to Our Group Portfolio</h1>
+    <p>Click on a member to view their personal portfolio and learn more about their work.</p>
+
+    <div id="portfolio" class="portfolio-section">
+        <div class="portfolio-item jared">
+            <h3>Shiella Mae Rico</h3>
+            <a href="jared.html">
+                <img src="{{ url_for('static', filename='shiella.jpg') }}" alt="Mae">
+            </a>
+            <p><a href="jared.html">View Shiella's Information</a></p>
+        </div>
+
+        <div class="portfolio-item another">
+            <h3>Andrew Castillo</h3>
+            <a href="another-member.html">
+                <img src="{{ url_for('static', filename='drew.jpg') }}" alt="Mae">
+            </a>
+            <p><a href="another-member.html">View Andrew's Information</a></p>
+        </div>
+
+        <div class="portfolio-item member3">
+            <h3>Rashed Dizon</h3>
+            <a href="member3.html">
+                <img src="{{ url_for('static', filename='rash.jpg') }}" alt="Mae">
+            </a>
+            <p><a href="member3.html">View Rashed's Information</a></p>
+        </div>
+        <div style="flex-basis: 100%; height: 0;"></div>
+        <div class="portfolio-item member4">
+            <h3>Joshua Prangan</h3>
+            <a href="member4.html">
+                <img src="{{ url_for('static', filename='bat.jpg') }}" alt="Mae">
+            </a>
+            <p><a href="member4.html">View Joshua's Information</a></p>
+        </div>
+
+        <div class="portfolio-item member5">
+            <h3>Jamelle Ivan Lao</h3>
+            <a href="member5.html">
+                <img src="{{ url_for('static', filename='me.jpg') }}" alt="Mae">
+            </a>
+            <p><a href="member5.html">View Jamelle's Information</a></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

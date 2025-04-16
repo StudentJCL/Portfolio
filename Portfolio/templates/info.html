@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background:url('{{ url_for('static', filename='back.jpg') }}') no-repeat center center/cover;
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 50px;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            width: 100%;
+        }
+        .profile {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid white;
+            text-align: center;
+            max-width: 300px;
+            margin: auto;
+        }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-bottom: 15px;
+        }
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .box {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">OUR INSIDE OUT PORTFOLIO</div>
+        <nav>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+    <section class="container" id="portfolio">
+        <div class="profile">
+            <img src="your-profile-image.jpg" alt="Profile Picture">
+            <h2>[Your Name]</h2>
+            <p>A passionate individual who loves to explore and create.</p>
+        </div>
+        <div class="details">
+            
+            <div class="box">
+                <h2>Hobbies</h2>
+                <ul>
+                    <li>Reading</li>
+                    <li>Playing Video Games</li>
+                    <li>Traveling</li>
+                    <li>Coding</li>
+                    <li>Photography</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>Likes</h2>
+                <ul>
+                    <li>Music</li>
+                    <li>Coffee</li>
+                    <li>Technology</li>
+                    <li>Anime</li>
+                    <li>Nature</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>Dislikes</h2>
+                <ul>
+                    <li>Negativity</li>
+                    <li>Loud Noises</li>
+                    <li>Dishonesty</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>About Me</h2>
+                <p>Hi! I am [Your Name]. I love exploring new things and learning about different aspects of life.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
